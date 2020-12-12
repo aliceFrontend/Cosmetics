@@ -1,0 +1,123 @@
+.wrapper{
+	max-width: 1920px;
+	margin: 0 auto;
+}
+.logo a img{
+	width: 7%;
+}
+.logo a{
+	color: #000;
+    font-size: 26px;
+    font-family: 'Nerko One', cursive;
+}
+.header{
+	padding: 20px 0 20px 0;
+}
+.header__item img{
+	width: 10%;
+}
+.header__menu{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.header__panel{
+    display: flex;
+}
+.header__panel li{
+    list-style: none;
+}
+.header__panel li img{
+    width: 7%;
+    margin: 0 10px 0 0;
+}
+.header__panel li a{
+
+    background: #FFFFFF;
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0;
+    padding-right: 0;
+    margin-top: 10px;
+}
+.header__top{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search-wrapper{
+    padding: 30px 0 30px 0;
+}
+.search-input{
+    width: 20%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #808080;
+}
+footer{
+    background-color: rgba(128,128,128,0.8);
+    opacity: 0.5;
+    padding: 30px;
+}
+.catalog{
+    padding-bottom: 80px;
+}
+.cart__delete{
+    width: 55%;
+}
+.btn__delete{
+    max-width: 50px;
+}
+.login{
+    padding: 30px 0 30px 0;
+    margin: 0 auto;
+    width: 100%; 
+}
+.login form{
+    text-align: center;
+}
+.login__title{
+    text-align: center;
+}
+.login__email, .login__password, .login__btn{
+    margin: 0 0 30px 0;
+}
+.login__email input, .login__password input{
+    border-radius: 20px;
+    border: 1px solid #808080;
+    padding: 10px;
+}
+.login__wrapper{
+    width: 680px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid rgba(128,128,128,0.5);
+    margin: 50px auto;
+}
+.login__btn input{
+    padding: 10px 30px;
+}
+.cart__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login__error{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login__error ul{
+    list-style: none;
+}
+.login__error ul li{
+    color: #ca6048; 
+}
