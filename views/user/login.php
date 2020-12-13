@@ -31,7 +31,7 @@
                                <input type="submit" name="submit" class="btn btn-default" value="Вход" /> 
                             </div>
                             <div class="login__help">
-                                <p>Еще не зарегистрированы?</p> <a href="">Зарегистрироваться</a>
+                                <p>Еще не зарегистрированы?</p> <a href="user/register">Зарегистрироваться</a>
                             </div>
                         </form>
                     </div>

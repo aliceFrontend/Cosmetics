@@ -11,7 +11,7 @@
     <div class="header">
         <div class="container header__menu">
            <div class="logo">
-               <a href="">
+               <a href="/">
                    <img src="/template/images/icon/logo-fox.svg" alt="">
                    KoreanCosmetics
                </a>

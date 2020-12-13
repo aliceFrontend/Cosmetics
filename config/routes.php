@@ -1,5 +1,6 @@
 <?php
 return array(
+    'user/login/user/register' => 'user/register',
 
 	 // Товар:
     'product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
