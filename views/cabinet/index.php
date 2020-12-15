@@ -2,15 +2,25 @@
 
 <section>
     <div class="container">
-        <div class="row">
+        <div class="row user__cabinet">
 
             <h1>Кабинет пользователя</h1>
             
             <h3>Привет, <?php echo $user['Name'];?>!</h3>
-            <ul>
+            <!-- <ul>
                 <li><a href="/cabinet/edit">Редактировать данные</a></li>
                 <li><a href="/cabinet/history">Список покупок</a></li>
-            </ul>
+            </ul> -->
+
+            <div class="user__items">
+                <div class="user__item">
+                    <a href="/cabinet/edit">Редактировать данные</a>
+                </div>
+                <div class="user__item">
+                    <a href="/cabinet/history">Список покупок</a>
+                </div>  
+            </div>
+            
             
         </div>
     </div>

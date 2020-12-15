@@ -20,7 +20,7 @@
         }
     </script>
     <?php
-        $uploadir='../img/';
+        $uploadir='./img/';
         $adresserver = 'localhost';
         $nameuser = 'root';
         $password = 'root';

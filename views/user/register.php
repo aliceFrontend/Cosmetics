@@ -5,8 +5,15 @@
         <div class="row">
             <div class="padding-right">
                 <div class="register__wrapper">
-                    <?php if ($result): ?>
+                  <div class="register__success alert alert-success">
+                     <?php if ($result): ?>
                         <p>Вы зарегистрированы!</p>
+                        <p>
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo aspernatur, excepturi natus, voluptates numquam rerum dolorum delectus eaque quis praesentium ratione, perspiciatis qui dolor mollitia vel odio quas, modi. Quae omnis delectus veniam doloribus ut, non corporis libero dolores dolor commodi nesciunt esse aspernatur labore sit aut, laborum est temporibus provident expedita iusto velit quis eos! Voluptatum cupiditate facilis quasi, repudiandae, quas sit architecto esse, error id impedit eligendi voluptates dolorem totam dicta amet iure nisi et facere. Quae quod, iusto delectus, enim, aut excepturi ad reprehenderit, ab aliquam tempore explicabo ea esse quibusdam dolorem nihil! Veniam, at blanditiis optio?
+                        </p>
+                        <p>
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo aspernatur, excepturi natus, voluptates numquam rerum dolorum delectus eaque quis praesentium ratione, perspiciatis qui dolor mollitia vel odio quas, modi. Quae omnis delectus veniam doloribus ut, non corporis libero dolores dolor commodi nesciunt esse aspernatur labore sit aut, laborum est temporibus provident expedita iusto velit quis eos! Voluptatum cupiditate facilis quasi, repudiandae, quas sit architecto esse, error id impedit eligendi voluptates dolorem totam dicta amet iure nisi et facere. Quae quod, iusto delectus, enim, aut excepturi ad reprehenderit, ab aliquam tempore explicabo ea esse quibusdam dolorem nihil! Veniam, at blanditiis optio?
+                        </p>
                     <?php else: ?>
                         <?php if (isset($errors) && is_array($errors)): ?>
                             <ul>
@@ -15,6 +22,8 @@
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
+                  </div>
+                   
 
                         <div class="signup-form"><!--sign up form-->
                             <div class="register__title">

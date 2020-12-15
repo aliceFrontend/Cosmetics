@@ -17,7 +17,7 @@ class Product
         $db = Db::getConnection();
         $productsList = array();
 
-        $result = $db->query('SELECT ID_Product, ProductName, PricePerOne FROM product '
+        $result = $db->query('SELECT ID_Product, ProductName, PricePerOne, Img FROM product '
                 . 'ORDER BY ID_Product DESC '                
                 . 'LIMIT ' . $count
                 . ' OFFSET '. $offset);
@@ -26,8 +26,8 @@ class Product
         while ($row = $result->fetch()) {
             $productsList[$i]['ID_Product'] = $row['ID_Product'];
             $productsList[$i]['ProductName'] = $row['ProductName'];
-            //$productsList[$i]['image'] = $row['image'];
             $productsList[$i]['PricePerOne'] = $row['PricePerOne'];
+            $productsList[$i]['Image'] = $row['Img'];
             $i++;
         }
 
@@ -46,7 +46,7 @@ class Product
         
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT ID_Product, ProductName, PricePerOne FROM product "
+            $result = $db->query("SELECT ID_Product, ProductName, PricePerOne, Img FROM product "
                     . "WHERE ID_Category = '$categoryId' "
                     . "ORDER BY ID_Product ASC "                
                     . "LIMIT ".self::SHOW_BY_DEFAULT
@@ -57,6 +57,7 @@ class Product
                 $products[$i]['ID_Product'] = $row['ID_Product'];
                 $products[$i]['ProductName'] = $row['ProductName'];
                 $products[$i]['PricePerOne'] = $row['PricePerOne'];
+                $products[$i]['Image'] = $row['Img'];
                 $i++;
             }
 

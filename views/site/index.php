@@ -31,7 +31,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/template/images/home/product1.jpg" alt="" />
+                                        <img src="/Admin/img/<?php echo $product['Image'];?>" alt="" />
                                         <h2><?php echo $product['PricePerOne'];?>$</h2>
                                         <p>
                                             <a href="/product/<?php echo $product['ID_Product'];?>">

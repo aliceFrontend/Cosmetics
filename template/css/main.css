@@ -56,8 +56,20 @@
     padding: 30px 0 30px 0;
 }
 .search-input{
-    width: 20%;
+    outline: none;
+    width: 100%;
     padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #808080;
+    transition: 0.3s;
+}
+.search-input:focus{
+    border: 0;
+    border-radius: 20px;
+    border: 1px solid #808080;
+}
+.search-input:active{
+    border: 0;
     border-radius: 20px;
     border: 1px solid #808080;
 }
@@ -83,18 +95,26 @@ footer{
 .login form{
     text-align: center;
 }
-.login__title. .register__title{
+.login__title, .register__title, .edits__title{
     text-align: center;
 }
-.login__email, .login__password, .login__btn, .register__email, .register__password, .register__btn, .register__name{
+.login__email, .login__password, .login__btn, .register__email, .register__password, .register__btn, .register__name, .edits__name, .edits__password, .edits__btn{
     margin: 0 0 30px 0;
 }
-.login__email input, .login__password input, .register__email input, .register__password input, .register__name input{
+.login__email input, .login__password input, .register__email input, .register__password input, .register__name input, .edits__name input, .edits__password input, .order__name input, .order__number input, .order__comments input{
+    outline: none; 
     border-radius: 20px;
     border: 1px solid #808080;
     padding: 10px;
 }
-.login__wrapper, .register__wrapper{
+
+.login__email input:active, .login__password input:active, .register__email input:active, .register__password input:active, .register__name input:active, .edits__name input:active, .edits__password input:active, .order__name input:active, .order__number input:active, .order__comments input:active{
+    border-radius: 20px;
+    border: 1px solid #808080;
+}
+
+
+.login__wrapper, .register__wrapper, .edits__wrapper{
     width: 680px;
     background: #fff;
     border-radius: 10px;
@@ -105,7 +125,7 @@ footer{
 .login__btn input, .register__btn{
     padding: 10px 30px;
 }
-.cart__wrapper{
+.cart__wrapper,{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,4 +154,71 @@ footer{
 }
 .order__name, .order__number, .order__comments, .order__btn{
     margin: 0 0 15px 0;
+}
+.register__success{
+    padding: 20px;
+}
+.alert{
+    margin-bottom: 0;
+}
+.productinfo img{
+    width: 35%;
+}
+.product__wrapper{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+}
+.cart__table{
+    margin: 0 0 30px 0;
+}
+.user__cabinet h1{
+    text-align: center;
+}
+.user__items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user__item{
+    width: 260px;
+    height: 160px;
+    margin: 30px 30px 180px 30px;
+    border: 1px solid rgba(218,218,218,0.8);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user__item a{
+    color: #000;
+    font-size: 20px;
+}
+.edits__title{
+    margin: 0 0 30px 0;
+}
+
+.header__bottom ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 150px 0 150px;
+}
+.header__nav ul li{
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0 30px 0 0; 
+}
+.header__nav ul li:nth-child(3){
+     margin: 0 0 0 0; 
+}
+.cart__wrap{
+    padding: 0 0 80px 0;
 }

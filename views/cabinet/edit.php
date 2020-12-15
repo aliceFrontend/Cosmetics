@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-4 col-sm-offset-4 padding-right">
-                
-                <?php if ($result): ?>
+            <div class="padding-right">
+                <div class="edits__wrapper">
+                  <?php if ($result): ?>
                     <p>Данные отредактированы!</p>
                 <?php else: ?>
                     <?php if (isset($errors) && is_array($errors)): ?>
@@ -17,21 +17,29 @@
                         </ul>
                     <?php endif; ?>
 
-                    <div class="signup-form"><!--sign up form-->
-                        <h2>Редактирование данных</h2>
+                    <div class="signup-form edits">
+                        <div class="edits__title">
+                          <h2>Редактирование данных</h2>  
+                        </div>
+                        
                         <form action="#" method="post">
-                            <p>Имя:</p>
-                            <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
+                            <div class="edits__name">
+                               <input placeholder="name" type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/> 
+                            </div>
+                            <div class="edits__password">
+                                 <input placeholder= "password" type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
+                            </div>
+                            <div class="edits__btn">
+                              <input type="submit" name="submit" class="btn btn-default" value="Сохранить" />  
+                            </div>
                             
-                            <p>Пароль:</p>
-                            <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
-                            <br/>
-                            <input type="submit" name="submit" class="btn btn-default" value="Сохранить" />
                         </form>
                     </div><!--/sign up form-->
                 
                 <?php endif; ?>
-                <br/>
+                <br/>  
+                </div>
+                
                 <br/>
             </div>
         </div>

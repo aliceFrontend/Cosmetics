@@ -48,9 +48,19 @@
                 <input type="text" placeholder="поиск">
             </div>
         </div> -->
-        <div class="search-wrapper">
+        <div class="header__bottom">
+          <div class="header__nav">
+            <ul>
+              <a href=""><li>О нас</li></a>
+              <a href=""><li>Доставка</li></a>
+              <a href=""><li>Оплата</li></a>
+            </ul>
+          </div>
+          <div class="search-wrapper">
               <form action="/catalog" class="search">
                   <input class="search-input" id="title-search-input_fixed" type="text" name="q" value="" placeholder="Поиск" size="20" maxlength="50" autocomplete="off">
               </form>
+          </div>
         </div>
+        
     </div>

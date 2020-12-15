@@ -23,7 +23,7 @@
             </div>
 
             <div class="col-sm-9 padding-right">
-                <div class="features_items">
+                <div class="features_items cart__table">
                     <h2 class="title text-center">Корзина</h2>
                     
                     <?php if ($productsInCart): ?>
