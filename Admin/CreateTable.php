@@ -40,8 +40,8 @@ if(mysqli_query($link, 'CREATE TABLE Product(
     -- ID_Brand int REFERENCES Brand(ID_Brand) ON DELETE CASCADE,
     ID_Category int,
     ID_Brand int,
-    CONSTRAINT ID_Category FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category),
-    CONSTRAINT ID_Brand  FOREIGN KEY (ID_Brand) REFERENCES Brand(ID_Brand),
+    CONSTRAINT ID_Category FOREIGN KEY (ID_Category) REFERENCES Category(ID_Category)  ON DELETE CASCADE,
+    CONSTRAINT ID_Brand  FOREIGN KEY (ID_Brand) REFERENCES Brand(ID_Brand)  ON DELETE CASCADE,
     Discount FLOAT DEFAULT 0,
     Img varchar(70) NOT NULL);'))
 {
@@ -84,13 +84,15 @@ if(mysqli_query($link, 'CREATE TABLE Suppliers(
 /////////////////////////
 if(mysqli_query($link, 'CREATE TABLE Deliveries(
     ID_Delivery int AUTO_INCREMENT PRIMARY KEY,
-    ID_Product int REFERENCES Products(ID_Product) ON DELETE CASCADE,
-    ID_Supplier int REFERENCES Suppliers(ID_Supplier) ON DELETE CASCADE,
+    ID_Product int, 
+    ID_Supplier int, 
     SupplierPricePerOne float NOT NULL,
-    AmountDelivered int NOT NULL, 
-    DeliveryDate DATETIME NOT NULL DEFAULT NOW());'))
+    AmountDelivered int NOT NULL, DeliveryDate DATETIME NOT NULL,
+    CONSTRAINT ID_Productfk FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product) ON DELETE CASCADE,
+    CONSTRAINT ID_Supplierfk FOREIGN KEY (ID_Supplier) REFERENCES Suppliers(ID_Suppliers) ON DELETE CASCADE
+    );'))
 {
-    echo '<br> Таблица создана';
+    echo '<br> Таблица поставок создана';
     echo '<script>location.replace("D:\Program\Telegram Desktop\OpenServer\domains\Cosmetics");</script>';
 }else{
     echo '<br>Ошибка Deliveries' . mysqli_error($link);
@@ -99,7 +101,8 @@ if(mysqli_query($link, 'CREATE TABLE Deliveries(
 if(mysqli_query($link, 'CREATE TABLE Orders(
     ID_Order int AUTO_INCREMENT PRIMARY KEY,
     ID_Client int,
-    Products varchar(40) NOT NULL,
+    Products varchar(250) NOT NULL,
+    CONSTRAINT ID_Clientfk FOREIGN KEY (ID_Client) REFERENCES clients(ID_Client) ON DELETE CASCADE,
 OrderDate DATETIME NOT NULL DEFAULT NOW());'))
 {
     echo '<br> Таблица создана';

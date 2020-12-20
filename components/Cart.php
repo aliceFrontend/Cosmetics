@@ -109,7 +109,7 @@ class Cart
             unset($_SESSION['products']);
         }
     }
-
+    
     /**
      * Удаляет товар с указанным id из корзины
      * @param integer $id <p>id товара</p>

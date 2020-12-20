@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="active-menu" href="ViewCategory.php">
+                        <a href="ViewCategory.php">
                             <i class="fa fa-table"></i>
                             Category
                         </a>
@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="ViewOrders.php">
+                        <a class="active-menu" href="ViewOrders.php">
                             <i class="fa fa-table"></i>
                             Orders
                         </a>
@@ -95,18 +95,19 @@
             <div id="page-inner">
                 <div class="container">
                             <div class="container brand__btn">
-                              <form action="AddRecordCategory.php" method="GET" class="mr-3">
+                              <form action="AddRecordBrand.php" method="GET" class="mr-3">
                                     <input type="submit" name="add" value="Добавить запись" class="btn btn-success">
                                 </form>
-                                <form action="EditCategory.php" method="GET" class="mr-3">
+                                <form action="EditBrand.php" method="GET" class="mr-3">
                                     <input type="submit" name="edit" value="Изменить запись" class="btn btn-warning">
                                 </form>
-                                <form action="DeleteCategory.php" method="GET" class="mr-3">
+                                <form action="DeleteBrand.php" method="GET" class="mr-3">
                                      <input type="submit" name="delete" value="Удалить запись" class="btn btn-danger">
                                 </form>  
                             </div>
-                </div>
-                      <?php
+                        </div>
+                     <div class="container">
+                        <?php
                         $adresserver = 'localhost';
                         $nameuser = 'root';
                         $password = 'root';
@@ -115,22 +116,26 @@
                         $link = mysqli_connect($adressserver, $nameuser, $password) or die('Ошибка: ' . mysqli_error($link));
                         mysqli_select_db($link, $namebd) or die('Couldnot connect');
 
-                        $posts = mysqli_query($link, "SELECT * FROM Category;");
+                        $posts = mysqli_query($link, "SELECT * FROM orders;");
                         $num_rows = mysqli_num_rows($posts);
 
-                        echo "<div class='container pb-3 pt-3'><h1 class='category__title'>Категории</h1></div>";
-                        echo "<table class='table category__table'>";
+                        echo "<div class='container pb-5 pt-5'><h1 class='brand__title'>Заказы</h1></div>";
+                        echo "<table class='table brand__table'>";
                         for($i = 0; $i < $num_rows; $i++){
                             while($row = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
-                                echo "<tr id=".$row['ID_Category']." onclick='myFunction(".$row['ID_Category'].")'>";
-                                echo "<td>".$row['ID_Category']."</td>";
-                                echo "<td>".$row['CategoryName']."</td>";
+                                echo "<tr id=".$row['ID_Order']." onclick='myFunction(".$row['ID_Order'].")'>";
+                                echo "<td>".$row['ID_Order']."</td>";
+                                echo "<td>".$row['ID_Client']."</td>";
+                                echo "<td>".$row['Products']."</td>";
+                                echo "<td>".$row['OrderDate']."</td>";
                                 echo "</tr>";
                             }
                         }
                         echo "</table>";
                         mysqli_close($link);
-                    ?>
+                         ?>
+                        <!-- конец -->
+                    </div>   
                 <footer>
                     <p>All right reserved. Template by:
                         <a href="http://webthemez.com">WebThemez</a>

@@ -142,30 +142,12 @@ class CartController
                 // Если ошибок нет
                 // Сохраняем заказ в базе данных
 
-                //$result = Order::save($userId, $products);
-
-                $db = Db::getConnection();
-
-        $sql = 'INSERT INTO orders (ID_Client, Products) '
-                . 'VALUES (:user_id, :products)';
-
-        $result = $db->prepare($sql);
-        $result->bindParam(':user_id', $userId, PDO::PARAM_STR);
-        $result->bindParam(':products', 'hello', PDO::PARAM_STR);
-
-        return $result->execute();
-
-                // if ($result) {
-                //     // Если заказ успешно сохранен
-                //     // Оповещаем администратора о новом заказе по почте                
-                //     $$adminEmail = 'koshys.osu@gmail.com';
-                //     $message = 'http://CoreanBeauty.com/admin/orders';
-                //     $subject = 'Новый заказ!';
-                //     mail($adminEmail, $subject, $message);
-
-                    // Очищаем корзину
+                $result = Order::save($userId, $products);
+                    // Если заказ успешно сохранен
+                if($result){
+                    //Очищаем корзину
                     Cart::clear();
-                
+                }  
             }
         }
 

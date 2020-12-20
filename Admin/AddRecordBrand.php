@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="ViewClints.php">
+                        <a href="ViewClients.php">
                             <i class="fa fa-table"></i>
                             Clients
                         </a>

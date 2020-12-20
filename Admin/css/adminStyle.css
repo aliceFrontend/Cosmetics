@@ -12,21 +12,25 @@ strong{
 .top-novbar{
 	background: #fff;
 }
-.brand__title, .category__title{
+.brand__title, .category__title, .product__title{
+	text-align: left;
 	margin: 0 0 30px 0;
 }
-.brand__table, .category__table{
+.brand__table, .category__table, .product__table{
 	width: 50%;
 }
-.brand__btn{
+.brand__btn, .category__btn{
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	margin: 0 0 30px 0;
 }
-.brand__btn form{
+.brand__btn form, .category__btn form{
 	margin: 0 30px 0 0;
 }
-.brand__btn form:nth-child(3){
+.brand__btn form:nth-child(3), .category__btn form:nth-child(3){
 	margin: 0;
+}
+.product__add{
+	margin-top: 30px;
 }
