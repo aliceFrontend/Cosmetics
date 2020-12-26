@@ -10,9 +10,10 @@ class Order
     public static function save($userId, $products)
     {
         //$products = json_encode($products);
+        $arr = Cart::getProducts();
+        $prodString = array_pop($arr);
 
-        $prodString = Cart::getProducts();
-        $prodString = print_r($prodString, true);
+        //$prodString = print_r($prodString, true);
         $db = Db::getConnection();
 
         $sql = 'INSERT INTO orders (ID_Client, Products) '

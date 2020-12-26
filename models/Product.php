@@ -34,6 +34,35 @@ class Product
         return $productsList;
     }
     
+    public static function getProductsBySearch(string $search, $count = self::SHOW_BY_DEFAULT, $page = 0)
+    {
+        $count = intval($count);
+        $page = intval($page);
+        $offset = $page * $count;
+        
+        $db = Db::getConnection();
+        $productsList = array();
+
+        $result = $db->query('SELECT ID_Product, ProductName, PricePerOne, Img FROM product '
+                . "WHERE ProductName LIKE '%" . $search . "%' "
+                . 'ORDER BY ID_Product DESC '                
+                . 'LIMIT ' . $count
+                . ' OFFSET '. $offset
+        );
+
+        $i = 0;
+        while ($row = $result->fetch()) {
+            
+            $productsList[$i]['ID_Product'] = $row['ID_Product'];
+            $productsList[$i]['ProductName'] = $row['ProductName'];
+            $productsList[$i]['PricePerOne'] = $row['PricePerOne'];
+            $productsList[$i]['Image'] = $row['Img'];
+            $i++;
+        }
+
+        return $productsList;
+    }
+
     /**
      * Returns an array of products
      */

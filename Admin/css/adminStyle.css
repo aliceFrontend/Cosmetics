@@ -34,3 +34,29 @@ strong{
 .product__add{
 	margin-top: 30px;
 }
+.product__btn{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.product__btn form{
+	margin: 0 0 0 30px;
+	display: flex;
+}
+.close__btn,.close__btn-red{
+	padding: 6px 12px;
+	border-radius: 5px;
+	background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #fff;
+    top: 36px;
+}
+
+.close__btn-red{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.none{
+	display: none;
+}
+

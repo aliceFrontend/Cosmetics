@@ -93,7 +93,7 @@
     </script>
         <div id="page-wrapper"> 
             <div id="page-inner">
-                <div class="container">
+                <!-- <div class="container">
                             <div class="container brand__btn">
                               <form action="AddRecordBrand.php" method="GET" class="mr-3">
                                     <input type="submit" name="add" value="Добавить запись" class="btn btn-success">
@@ -105,7 +105,7 @@
                                      <input type="submit" name="delete" value="Удалить запись" class="btn btn-danger">
                                 </form>  
                             </div>
-                        </div>
+                        </div> -->
                      <div class="container">
                         <?php
                         $adresserver = 'localhost';

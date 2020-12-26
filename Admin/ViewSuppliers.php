@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="active-menu" href="ViewClients.php">
+                        <a href="ViewClients.php">
                             <i class="fa fa-table"></i>
                             Clients
                         </a>
@@ -67,7 +67,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="ViewSuppliers.php">
+                        <a class="active-menu" href="ViewSuppliers.php">
                             <i class="fa fa-table"></i>
                             Suppliers
                         </a>
@@ -93,7 +93,7 @@
     </script>
         <div id="page-wrapper"> 
             <div id="page-inner">
-                <!-- <div class="container">
+                <div class="container">
                             <div class="container brand__btn">
                               <form action="AddRecordBrand.php" method="GET" class="mr-3">
                                     <input type="submit" name="add" value="Добавить запись" class="btn btn-success">
@@ -105,7 +105,7 @@
                                      <input type="submit" name="delete" value="Удалить запись" class="btn btn-danger">
                                 </form>  
                             </div>
-                </div> -->
+                        </div>
                      <div class="container">
                         <?php
                         $adresserver = 'localhost';
@@ -116,22 +116,25 @@
                         $link = mysqli_connect($adressserver, $nameuser, $password) or die('Ошибка: ' . mysqli_error($link));
                         mysqli_select_db($link, $namebd) or die('Couldnot connect');
 
-                        $posts = mysqli_query($link, "SELECT * FROM clients;");
+                        $posts = mysqli_query($link, "SELECT * FROM suppliers;");
                         $num_rows = mysqli_num_rows($posts);
 
                         echo "<div class='container pb-5 pt-5'>
-                                 <h1 class='brand__title'>Клиенты</h1>
+                                 <h1 class='brand__title'>Поставщики</h1>
                              </div>";
                         echo "<table class='table brand__table'>";
 
                         for($i = 0; $i < $num_rows; $i++){
                             while($row = mysqli_fetch_array($posts, MYSQLI_ASSOC)){
                                 
-                                echo "<tr id=".$row['ID_Clients']." onclick='myFunction(".$row['ID_Clients'].")'>";
-                                echo "<td>".$row['Email']."</td>";
-                                echo "<td>".$row['Pass']."</td>";
-                                echo "<td>".$row['isAdmin']."</td>";
-                                echo "<td>".$row['Name']."</td>";
+                                echo "<tr id=".$row['ID_Suppliers']." onclick='myFunction(".$row['ID_Suppliers'].")'>";
+                                echo "<td>".$row['CompanyName']."</td>";
+                                echo "<td>".$row['SupplierPhone']."</td>";
+                                echo "<td>".$row['ContactName']."</td>";
+                                echo "<td>".$row['Fax']."</td>";
+                                echo "<td>".$row['Country']."</td>";
+                                echo "<td>".$row['City']."</td>";
+                                 echo "<td>".$row['SupplierAddress']."</td>";
                                 echo "</tr>";
                             }
                         }

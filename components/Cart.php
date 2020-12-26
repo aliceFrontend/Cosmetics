@@ -24,6 +24,7 @@ class Cart
         if (isset($_SESSION['products'])) {
             // То заполним наш массив товарами
             $productsInCart = $_SESSION['products'];
+
         }
 
         // Проверяем есть ли уже такой товар в корзине 

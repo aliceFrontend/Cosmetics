@@ -4,12 +4,13 @@ class CatalogController {
 
 	public function actionIndex()
 	{
-		
+		$q = $_POST['q'] ?? '';
 		$categories = array();
         $categories = Category::getCategoriesList();
 
         $latestProducts = array();
-        $latestProducts = Product::getLatestProducts(6);
+        $latestProducts = Product::getProductsBySearch($q);
+        
 		require_once(ROOT . '/views/catalog/index.php');
 
 		return true;

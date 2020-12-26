@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="active-menu" href="ViewBrand.php">
+                        <a href="ViewBrand.php">
                             <i class="fa fa-table"></i>
                             Brand
                         </a>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="ViewProduct.php">
+                        <a href="ViewProduct.php" class="active-menu">
                             <i class="fa fa-table"></i>
                             Product
                         </a>
@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="ViewClients.php">
+                        <a href="ViewClints.php">
                             <i class="fa fa-table"></i>
                             Clients
                         </a>
@@ -84,45 +84,47 @@ $namebd = 'Cosmetics';
 
 $link = mysqli_connect($adressserver, $nameuser, $password) or die('Ошибка: ' . mysqli_error($link));
         mysqli_select_db($link, $namebd) or die('Couldnot connect');
+?>
 
-mysqli_select_db($link, $namebd);
-$ID_Product = $_GET['edit'];
-// $posts = mysqli_query($link, "SELECT * FROM Product WHERE ID_Product ='$ID_Product'");
-// $row = mysqli_fetch_array($posts, MYSQLI_ASSOC);
 
-// 
-$posts = mysqli_query($link, 
-    "SELECT * FROM Product WHERE ID_Product=".$_GET[edit].";");
-while ($row = mysqli_fetch_array($posts, MYSQLI_ASSOC))  { ?>
+
+
+
+
+
+
+
+
+
+
+
+
 <form method="POST">
-    <div class="item none">
-         <input type="text" name="ID_Product" value="<?php echo $row[ID_Product]?>">
-    </div>
     <div class="item">
         <p>Введите Имя продукта</p>
-        <input type="text" name="ProductName" value="<?php echo $row[ProductName]?>">
+        <input type="text" name="ProductName">
     </div>
     <div class="item">
         <p>Описание продукта</p>
-        <input type="text" name="ProductDescription" value="<?php echo $row[ProductDescription] ?>">
+        <input type="text" name="ProductDescription">
     </div>
     <div class="item">
         <p>Цена за шт</p>
-        <input type="text" name="PricePerOne" value="<?php echo $row[PricePerOne] ?>">
+        <input type="text" name="PricePerOne">
     </div>
     <div class="item">
         <p>Выберите файл</p>
-        <input type="file" name = "ProductFile" value="<?php echo $row[ProductFile] ?>">
+        <input type="file" name = "ProductFile">
     </div>
     <div class="item">
         <p>Выберите Категорию</p>
             <?php 
-            echo "<select name = 'ID_Category'>";
-            $p = mysqli_query($link, "SELECT ID_Category, CategoryName FROM Category");
+            echo "<select name = 'ID_Deliveries'>";
+            $p = mysqli_query($link, "SELECT ID_Deliveries, CategoryName FROM Category");
             $num_rows = mysqli_num_rows($p);
             for ($i=0; $i < $num_rows ; $i++) { 
-                while ($er = mysqli_fetch_array($p, MYSQLI_ASSOC)) {
-                    echo "<option value = ".$er[ID_Category]."><br>".$er[CategoryName]. "</option>";
+                while ($row = mysqli_fetch_array($p, MYSQLI_ASSOC)) {
+                    echo "<option value = ".$row[ID_Category]."><br>".$row[CategoryName]. "</option>";
                 }}
                 echo "</select>";        
          ?>
@@ -134,27 +136,46 @@ while ($row = mysqli_fetch_array($posts, MYSQLI_ASSOC))  { ?>
             $p = mysqli_query($link, "SELECT ID_Brand, BrandName FROM Brand");
             $num_rows = mysqli_num_rows($p);
             for ($i=0; $i < $num_rows ; $i++) { 
-                while ($er = mysqli_fetch_array($p, MYSQLI_ASSOC)) {
-                    echo "<option value = ".$er[ID_Brand]."><br>".$er[BrandName]. "</option>";
+                while ($row = mysqli_fetch_array($p, MYSQLI_ASSOC)) {
+                    echo "<option value = ".$row[ID_Brand]."><br>".$row[BrandName]. "</option>";
                 }}
                 echo "</select>";        
          ?>
     </div>
     <div class="item">
         <p>Скидка</p>
-        <input type="text" name="Discount" value="<?php echo $row[Discount] ?>">
+        <input type="text" name="Discount">
     </div>    
-     <input type="submit" value="Изменить" name="button">
+     <input type="submit" value="Добавить" name="button" class="product__add">
 </form>
 
-<?php
-}
-if($_POST['button'] == 'Изменить'){
-    if(mysqli_query($link, "UPDATE Product SET Discount = '".$_POST['Discount']."', ID_Brand = '".$_POST['ID_Brand']."', ID_Category = '".$_POST['ID_Category']."', PricePerOne = '".$_POST['PricePerOne']."', ProductDescription =  '".$_POST['ProductDescription']."', ProductName = '".$_POST['ProductName']."'
-        WHERE ID_Product=".$_POST['ID_Product'].";")){
 
-        echo "<br> Запись изменена";
-        echo "<script>location.replace('ViewProduct.php');</script>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+if($_POST['button'] == 'Добавить'){
+    if(mysqli_query($link, "INSERT INTO Deliveries(ID_Product, ID_Supplier, PricePerOne, AmountDelivered, DeliveryDate)
+        VALUES ('".$_POST['ID_Product']."', '".$_POST['ID_Supplier']."', '".$_POST['PricePerOne']."', '".$_POST[' AmountDelivered']."', '".$_POST['DeliveryDate']."');")){
+
+        echo "<br> Запись добавлена";
+        echo "<script>location.replace('ViewDeliveries.php');</script>";
     }else{
         echo '<br> Error' . mysqli_error($link);
     }
@@ -162,16 +183,15 @@ if($_POST['button'] == 'Изменить'){
 mysqli_close($link);
 ?>
 </div>
-</div>
-</div>
-<footer>
-    <p>All right reserved. Template by:
-        <a href="http://webthemez.com">WebThemez</a>
-    </p>
-</footer>
- </div>
-        </div>
     </div>
+         <footer>
+                            <p>All right reserved. Template by:
+                                <a href="http://webthemez.com">WebThemez</a>
+                            </p>
+                </footer>
+               </div>
+            </div>
+        </div>
 <script src="../template/js/admin/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.metisMenu.js"></script>

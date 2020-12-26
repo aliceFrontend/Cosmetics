@@ -37,8 +37,8 @@
                                     <div class="product__price">
                                        <h3>US $<?php echo $product['PricePerOne']; ?></h3> 
                                     </div>   
-                                    <label>Количество:</label>
-                                    <input type="text" value="3" />
+                                    <!-- <label>Количество:</label>
+                                    <input type="text" value="3" /> -->
                                     <button type="button" class="btn btn-fefault cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         В корзину

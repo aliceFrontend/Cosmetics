@@ -222,3 +222,13 @@ footer{
 .cart__wrap{
     padding: 0 0 80px 0;
 }
+
+.view-product img{
+    width: 50%;
+}
+.row__product{
+    display: flex;
+}
+.pad{
+    padding: 30px;
+}

@@ -57,10 +57,35 @@
             </ul>
           </div>
           <div class="search-wrapper">
-              <form action="/catalog" class="search">
+              <form action="/catalog" class="search" method="POST">
                   <input class="search-input" id="title-search-input_fixed" type="text" name="q" value="" placeholder="Поиск" size="20" maxlength="50" autocomplete="off">
               </form>
           </div>
         </div>
         
     </div>
+
+
+
+<!-- <?php 
+    $adresserver = 'localhost';
+        $nameuser = 'root';
+        $password = 'root';
+        $namebd = 'Cosmetics';
+
+        $link = mysqli_connect($adressserver, $nameuser, $password) or die('Ошибка: ' . mysqli_error($link));
+        mysqli_select_db($link, $namebd) or die('Couldnot connect');
+
+        $viewId = $_GET['view_id'];
+        $searchValue = $_GET['query'];
+
+        $query = "SELECT * FROM CategoryProduct ";
+        if($viewId != null){
+            $query .= "WHERE ID_Category = $viewId";
+        }else if($searchValue != null){
+            $query .= "WHERE ProductName LIKE '%$searchValue%'";
+        }
+
+        $posts = mysqli_query($link, $query);
+        $num_rows = mysqli_num_rows($posts);
+?> -->
